@@ -1,0 +1,17 @@
+{
+  "pokemon": "squirtle",
+  "evolutions": [
+    {
+      "name": "blastoise",
+      "weight": 855
+    },
+    {
+      "name": "squirtle",
+      "weight": 90
+    },
+    {
+      "name": "wartortle",
+      "weight": 225
+    }
+  ]
+}
