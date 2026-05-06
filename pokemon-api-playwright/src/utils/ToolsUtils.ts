@@ -8,7 +8,7 @@ export class ToolsUtils {
     ): string {
 
         const parts = url.split('/');
-
+        
         return parts[parts.length - position];
 
     }
