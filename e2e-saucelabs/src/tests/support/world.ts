@@ -1,8 +1,9 @@
-import { setWorldConstructor, World, IWorldOptions } from '@cucumber/cucumber';
-import { Browser, BrowserContext, Page, chromium } from 'playwright';
+import { setWorldConstructor, IWorldOptions } from '@cucumber/cucumber';
+import { AllureCucumberWorld } from 'allure-cucumberjs';
+import { Browser, BrowserContext, Page } from 'playwright';
 import { ProductModel } from '../../main/model/ProductModel';
 
-export class CustomWorld extends World {
+export class CustomWorld extends AllureCucumberWorld {
   browser!: Browser;
   context!: BrowserContext;
   page!: Page;
