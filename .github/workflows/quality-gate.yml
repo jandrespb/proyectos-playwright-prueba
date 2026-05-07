@@ -1,0 +1,57 @@
+# =========================================================
+# Workflow: Quality Gate
+#
+# Responsabilidad:
+# Validar reglas de calidad de código del proyecto.
+#
+# Este workflow verifica:
+# - Linting con Biome
+# - Formato de código con Biome
+#
+# Objetivo:
+# Bloquear la integración de cambios cuando el código
+# no cumpla las validaciones mínimas de calidad.
+# =========================================================
+
+name: Quality Gate
+
+on:
+  push:
+    branches:
+      - impl-ci-cd
+      - main
+
+  pull_request:
+    branches:
+      - impl-ci-cd
+      - main
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20.20.2
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.20.2"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Biome check
+        run: npx biome check .
+
+      - name: Quality Gate passed
+        if: success()
+        run: echo "✅ Todas las revisiones de Biome fueron exitosas."
+
+      - name: Quality Gate failed
+        if: failure()
+        run: |
+          echo "❌ Falló la revisión de Biome."
+          echo "Revisá el step marcado en rojo arriba para ver exactamente dónde falló."
