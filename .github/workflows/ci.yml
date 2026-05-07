@@ -46,6 +46,7 @@ jobs:
         with:
           node-version: "20.20.2"
           cache: "npm"
+          cache-dependency-path: e2e-saucelabs/package-lock.json
 
       - name: Install dependencies
         run: npm ci
