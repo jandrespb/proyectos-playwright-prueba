@@ -32,10 +32,9 @@ on:
 jobs:
   validate-ci-typescript:
     runs-on: ubuntu-latest
-
-    env:
-      USERNAME: standard_user
-      PASSWORD: secret_sauce
+    defaults:
+      run:
+        working-directory: ./e2e-saucelabs
 
     steps:
       - name: Checkout repository
