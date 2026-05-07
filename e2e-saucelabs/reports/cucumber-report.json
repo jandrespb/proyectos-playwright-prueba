@@ -1,0 +1,144 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "proceso-de-compra-en-sauce-labs;compra-exitosa-del-producto-sauce-labs-fleece-jacket",
+        "keyword": "Escenario",
+        "line": 4,
+        "name": "Compra exitosa del producto Sauce Labs Fleece Jacket",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 454344041
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 5,
+            "name": "que el usuario ingresa a la página de Sauce Labs",
+            "match": {
+              "location": "src/tests/step-definitions/GeneralStep.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 711032833
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 6,
+            "name": "realiza el login con credenciales válidas",
+            "match": {
+              "location": "src/tests/step-definitions/LoginStep.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77567332
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Cuando ",
+            "line": 7,
+            "name": "localiza el producto \"Sauce Labs Fleece Jacket\"",
+            "match": {
+              "location": "src/tests/step-definitions/ProductStep.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4369624
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 8,
+            "name": "almacena el nombre y precio del producto",
+            "match": {
+              "location": "src/tests/step-definitions/ProductStep.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 149667
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 9,
+            "name": "añade el producto al carrito",
+            "match": {
+              "location": "src/tests/step-definitions/ProductStep.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4065840917
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Entonces ",
+            "line": 10,
+            "name": "valida que el nombre y precio en el carrito coincidan",
+            "match": {
+              "location": "src/tests/step-definitions/CheckoutStep.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3398833
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 11,
+            "name": "completa el proceso de compra",
+            "match": {
+              "location": "src/tests/step-definitions/CheckoutStep.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 116424165
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 12,
+            "name": "confirma que la orden fue realizada exitosamente",
+            "match": {
+              "location": "src/tests/step-definitions/CheckoutStep.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2788166
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 74857500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "proceso-de-compra-en-sauce-labs",
+    "line": 2,
+    "keyword": "Característica",
+    "name": "Proceso de compra en Sauce Labs",
+    "tags": [],
+    "uri": "src/tests/features/checkout.feature"
+  }
+]
