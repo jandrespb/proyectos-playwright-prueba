@@ -1,0 +1,69 @@
+# =========================================================
+# Workflow: CI TypeScript
+#
+# Responsabilidad:
+# Validar que la integración continua funcione correctamente
+# para un proyecto Playwright + TypeScript + Node.
+#
+# Este workflow verifica:
+# - Ejecución del pipeline
+# - Configuración de Node
+# - Instalación de dependencias con npm
+# - Variables de entorno base
+#
+# Objetivo:
+# Garantizar que la infraestructura inicial de CI/CD
+# esté correctamente configurada.
+# =========================================================
+
+name: CI TypeScript
+
+on:
+  push:
+    branches:
+      - impl-ci-cd
+      - main
+
+  pull_request:
+    branches:
+      - impl-ci-cd
+      - main
+
+jobs:
+  validate-ci-typescript:
+    runs-on: ubuntu-latest
+
+    env:
+      USERNAME: standard_user
+      PASSWORD: secret_sauce
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node 20.20.2
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.20.2"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate Node version
+        run: node --version
+
+      - name: Validate environment variables
+        run: |
+          echo "USERNAME=$USERNAME"
+          echo "PASSWORD is configured"
+
+      - name: CI TypeScript pipeline passed
+        if: success()
+        run: echo "✅ La configuración base del pipeline CI TypeScript fue ejecutada correctamente."
+
+      - name: CI TypeScript pipeline failed
+        if: failure()
+        run: |
+          echo "❌ Falló la configuración base del pipeline CI TypeScript."
+          echo "Revisá el step marcado en rojo arriba para identificar el problema."
