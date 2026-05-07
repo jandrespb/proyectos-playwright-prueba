@@ -83,3 +83,5 @@ Para escalar la solución a un equipo de QA más grande se propone:
 - **Nuevos módulos independientes** → la arquitectura basada en Node.js permite agregar nuevas funcionalidades o integraciones sin afectar los módulos existentes
 - **Integración con gestores de pruebas** → Allure puede integrarse con herramientas como Xray o TestRail para gestionar casos de prueba a nivel de equipo
 - **Variables de entorno por ambiente** → el uso de `.env` permite configurar diferentes ambientes (dev, staging, producción) sin cambiar el código
+
+---
